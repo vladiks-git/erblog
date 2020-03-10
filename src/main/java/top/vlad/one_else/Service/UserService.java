@@ -1,6 +1,9 @@
 package top.vlad.one_else.Service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import top.vlad.one_else.Beans.Beans;
 import top.vlad.one_else.Entities.Role;
@@ -11,7 +14,7 @@ import java.util.Collections;
 import java.util.List;
 
 @Service
-public class UserService {
+public class UserService implements UserDetailsService {
     @Autowired
     UserRepo userRepo;
     @Autowired
@@ -40,5 +43,13 @@ public class UserService {
         userRepo.save(user);
     }
 
+    @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        User user = userRepo.findUserByUsername(username);
+        if(user == null){
+            throw new UsernameNotFoundException("User not found");
+        }
+        return user;
+    }
 }
 
