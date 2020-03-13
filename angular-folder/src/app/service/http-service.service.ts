@@ -16,4 +16,8 @@ export class HttpServiceService {
   getAllUsers(){
     return this.http.get<User[]>("http://localhost:8080/users")
   }
+
+  login(user: User){
+    return this.http.post("http://localhost:8080/login",user)
+  }
 }

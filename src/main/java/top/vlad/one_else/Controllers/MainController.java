@@ -28,4 +28,14 @@ public class MainController {
         userService.deleteUser(user);
     }
 
+    @RequestMapping("/login")
+    public boolean loginUser(@RequestBody User user){
+        User userFromDb = userService.findUserByUsername(user.getUsername());
+        if(userFromDb == null)
+            return false;
+        if(user.getPassword().equals(userFromDb.getPassword()))
+            return true;
+        else return false;
+
+    }
 }

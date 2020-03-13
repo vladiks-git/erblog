@@ -14,7 +14,7 @@ public class User{
 
     private String password;
 
-    @ManyToMany(fetch = FetchType.LAZY)
+    @ManyToMany(fetch = FetchType.LAZY, cascade=CascadeType.ALL)
     Set<Role> roles;
 
     public User() {
