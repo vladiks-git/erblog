@@ -1,10 +1,12 @@
 package top.vlad.one_else.Entities;
 
+import org.springframework.security.core.GrantedAuthority;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "t_roles")
-public class Role {
+public class Role implements GrantedAuthority {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
@@ -13,8 +15,7 @@ public class Role {
     public Role() {
     }
 
-    public Role(long id, String role){
-        this.id = id;
+    public Role(String role){
         this.role = role;
     }
 
@@ -34,4 +35,8 @@ public class Role {
         this.role = role;
     }
 
+    @Override
+    public String getAuthority() {
+        return getRole();
+    }
 }
