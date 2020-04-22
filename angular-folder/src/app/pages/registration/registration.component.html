@@ -1,0 +1,67 @@
+<div class="col-lg-3">
+  <form class="card" [formGroup]="form" (ngSubmit)="submit()">
+    <div class="form-group">
+
+      <h2 class="form-name-heading">Registration</h2>
+
+      <label for="inputName" class="sr-only">Name</label>
+      <input type="name" id="inputName" class="form-control"
+             [(ngModel)]="name" placeholder="Name" formControlName="name">
+      <div class="validation" *ngIf="form.get('name').invalid && form.get('name').touched">
+        <div class="alert alert-danger" role="alert"
+             *ngIf="form.get('email').errors.required">
+          The name filed cannot be empty!
+        </div>
+      </div>
+
+      <label for="inputSurname" class="sr-only">Surname</label>
+      <input type="surname" id="inputSurname" class="form-control"
+             [(ngModel)]="surname" placeholder="Surname" formControlName="surname">
+      <div class="validation" *ngIf="form.get('surname').invalid && form.get('surname').touched">
+        <div class="alert alert-danger" role="alert"
+             *ngIf="form.get('surname').errors.required">
+          The surname filed cannot be empty!
+        </div>
+      </div>
+
+      <label for="inputEmail-reg" class="sr-only">Email address</label>
+      <input type="email" id="inputEmail-reg" class="form-control email"
+             [(ngModel)]="email"placeholder="Email address" formControlName="email"/>
+      <div class="validation" *ngIf="form.get('email').invalid && form.get('email').touched">
+        <div class="alert alert-danger" role="alert"
+             *ngIf="form.get('email').errors.required">
+          The email filed cannot be empty!
+        </div>
+        <div class="alert alert-danger" role="alert"
+             *ngIf="form.get('email').errors.email">
+          Included incorrect email!
+        </div>
+      </div>
+
+      <label for="inputPassword-reg" class="sr-only">Password</label>
+      <input type="password" id="inputPassword-reg" class="form-control"
+             [(ngModel)]="password"placeholder="Password" formControlName="password"/>
+      <div class="validation" *ngIf="form.get('password').invalid && form.get('password').touched">
+        <div class="alert alert-danger" role="alert"
+             *ngIf="form.get('password').errors.required">
+          The password filed cannot be empty!
+        </div>
+        <div class="alert alert-danger" role="alert"
+             *ngIf="form.get('password').errors.minlength"
+        >
+          Length must be at least {{form.get('password').errors.minlength.requiredLength}} characters.
+        </div>
+      </div>
+
+    <!--  <label for="inputPassword-reg-replay" class="sr-only">Confirm password</label>
+      <input type="password" id="inputPassword-reg-replay" class="form-control"
+             placeholder="Repeat password" formControlName="confirmPassword"/>-->
+
+      <button class="btn btn-lg btn-primary btn-block" type="submit"
+              [disabled]="form.invalid"
+      >
+        Register
+      </button>
+    </div>
+  </form>
+</div>

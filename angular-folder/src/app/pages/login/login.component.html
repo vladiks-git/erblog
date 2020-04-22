@@ -1,0 +1,71 @@
+<div class="row">
+  <div class="col-lg-7">
+    <div class="info">
+      <h2 class="hed-device">ERchat is available on computer</h2>
+      <img class="img" src="../assets/img/Desktop.png"/>
+    </div>
+  </div>
+
+  <div class="col-lg-4">
+    <form class="card" [formGroup]="form" (ngSubmit)="submit()">
+      <div class="form-group">
+
+        <h2 class="form-name-heading">Sign in</h2>
+
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input type="email" id="inputEmail" class="form-control email"
+               placeholder="Email address" formControlName="email"/>
+        <div
+          *ngIf="form.get('email').invalid && form.get('email').touched"
+          class="validation"
+        >
+          <div class="alert alert-danger" role="alert"
+               *ngIf="form.get('email').errors.required">
+            The email filed cannot be empty!
+          </div>
+
+          <div class="alert alert-danger" role="alert"
+               *ngIf="form.get('email').errors.email">
+            Included incorrect email!
+          </div>
+        </div>
+
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="inputPassword" class="form-control"
+               placeholder="Password" formControlName="password"/>
+        <div
+          *ngIf="form.get('password').invalid && form.get('password').touched"
+          class="validation"
+        >
+          <div class="alert alert-danger" role="alert"
+               *ngIf="form.get('password').errors.required">
+            The password filed cannot be empty!
+          </div>
+
+          <div class="alert alert-danger" role="alert"
+               *ngIf="form.get('password').errors.minlength"
+          >
+            Length must be at least {{form.get('password').errors.minlength.requiredLength}} characters.
+          </div>
+        </div>
+
+        <div class="form-group form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div>
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit"
+                [disabled]="form.invalid">
+          Sign in
+        </button>
+
+        <div class="create-account">
+          <small>
+            First time on ERchat?
+            <a [routerLink]="['/registration']" class="create">Create account</a>
+          </small>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

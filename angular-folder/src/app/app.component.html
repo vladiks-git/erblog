@@ -1,8 +1,10 @@
-<h2>Er Chat</h2>
-<p>Навигация по сайту</p>
-<ul>
-  <li><a [routerLink]="['/users']">Все пользователи</a></li>
-  <li><a [routerLink]="['/registration']">Регистрация</a></li>
-  <li><a [routerLink]="['/login']">login-page</a></li>
-</ul>
+<div class="navbar navbar-expand-lg sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">ERchat</a>
+    <div class="language">
+      <a class="switch-language" href="#">Switch to Russian</a>
+    </div>
+  </div>
+</div>
+
 <router-outlet></router-outlet>
