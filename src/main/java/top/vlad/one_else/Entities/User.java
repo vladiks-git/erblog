@@ -11,8 +11,25 @@ public class User {
     private long id;
 
     private String username;
-
+    private String surname;
     private String password;
+    private String email;
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
     @ManyToMany(fetch = FetchType.LAZY, cascade=CascadeType.ALL)
     Set<Role> roles;
@@ -20,9 +37,11 @@ public class User {
     public User() {
     }
 
-    public User(String username, String password, Set<Role> roles){
+    public User(String username, String surname, String email, String password, Set<Role> roles){
         this.password = password;
         this.username = username;
+        this.surname = surname;
+        this.email = email;
         this.roles = roles;
     }
 

@@ -57,7 +57,7 @@ export class RegistrationComponent implements OnInit {
       this.password.trim()
     ){
       const newUser: User = {
-        name: this.name,
+        username: this.name,
         surname: this.surname,
         email: this.email,
         password: this.password
