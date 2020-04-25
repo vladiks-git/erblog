@@ -3,6 +3,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {RegistrationComponent} from './pages/registration/registration.component';
 import {LoginComponent} from './pages/login/login.component';
 import {LoginAfRegComponent} from "./pages/login-af-reg/login-af-reg.component";
+import {ErrorComponent} from "./pages/error/error.component";
 
 // http://localhost:4200 -> LoginComponent
 // http://localhost:4200/registration -> RegistrationComponent
@@ -10,7 +11,9 @@ import {LoginAfRegComponent} from "./pages/login-af-reg/login-af-reg.component";
 const main: Routes = [
   {path: '', component: LoginComponent},
   {path: 'registration', component: RegistrationComponent},
-  {path: 'login', component: LoginAfRegComponent},
+  {path: 'login', component: LoginAfRegComponent, children: [
+      {path: 'error', component: ErrorComponent}
+    ]}
 ]
 
 @NgModule({

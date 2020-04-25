@@ -49,7 +49,8 @@ export class LoginAfRegComponent implements OnInit{
         this.form.reset()
         this.router.navigate([''])
       } else {
-        this.router.navigate([''])
+        this.router.navigate(['/login/error'])
+        this.form.reset()
       }
     })
   }
