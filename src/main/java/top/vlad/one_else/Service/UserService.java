@@ -29,7 +29,7 @@ public class UserService {
     }
 
     public boolean saveUser(User user){
-        User userFromDb = userRepo.findUserByUsername(user.getUsername());
+        User userFromDb = userRepo.findUserByEmail(user.getEmail());
         if(userFromDb != null)
             return false;
         user.setRoles(Collections.singleton(new Role("ROLE_USER")));
