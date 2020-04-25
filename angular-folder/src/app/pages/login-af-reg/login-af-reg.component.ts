@@ -1,6 +1,6 @@
 import {Component, OnInit} from "@angular/core";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {LoginUser, User} from "../../interfaces/interfaces";
+import {LoginUser} from "../../interfaces/interfaces";
 import {Router} from "@angular/router";
 import {HttpService} from "../../service/http.service";
 
@@ -37,12 +37,13 @@ export class LoginAfRegComponent implements OnInit{
     if (this.form.invalid){
       return
     }
-    const user: LoginUser = {
+    const loginUser: LoginUser = {
       email: this.form.value.email,
       password: this.form.value.password
     }
+    console.log(loginUser)
 
-    this.auth.login().subscribe((resp) => {
+    this.auth.login(loginUser).subscribe(resp => {
       console.log(resp)
       if (resp == true){
         this.form.reset()

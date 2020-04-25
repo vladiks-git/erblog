@@ -5,4 +5,5 @@ import top.vlad.one_else.Entities.User;
 
 public interface UserRepo extends JpaRepository<User, Long> {
     User findUserByUsername(String username);
+    User findUserByEmail(String email);
 }

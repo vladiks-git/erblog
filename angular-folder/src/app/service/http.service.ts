@@ -1,6 +1,6 @@
 import {Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
-import {User} from "../interfaces/interfaces";
+import {LoginUser, User} from "../interfaces/interfaces";
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +13,7 @@ export class HttpService {
     return this.http.post<User>("http://localhost:8080/registration",user)
   }
 
- login(){
-   return this.http.get("http://localhost:8080/login")
+ login(loginUser: LoginUser){
+   return this.http.post("http://localhost:8080/login",loginUser)
  }
 }
