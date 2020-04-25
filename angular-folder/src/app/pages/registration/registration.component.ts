@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {User} from "../../interfaces/interfaces";
 import {HttpService} from "../../service/http.service";
+import {Router} from "@angular/router";
 
 
 
@@ -18,7 +19,8 @@ export class RegistrationComponent implements OnInit {
   password: string
   form: FormGroup
 
-  constructor(private HttpService: HttpService) {}
+  constructor(private HttpService: HttpService, private router: Router) {
+  }
 
   ngOnInit() {
     this.form = new FormGroup({
@@ -62,9 +64,9 @@ export class RegistrationComponent implements OnInit {
         email: this.email,
         password: this.password
       }
-      this.HttpService.saveUser(newUser).subscribe(()=>{
-        console.log('New user: ' + newUser)
-      })
+      console.log(newUser)
+      this.HttpService.saveUser(newUser).subscribe(()=>{})
     }
+    this.router.navigate(['/login'])
   }
 }

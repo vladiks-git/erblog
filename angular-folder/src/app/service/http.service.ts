@@ -12,4 +12,8 @@ export class HttpService {
   saveUser (user: User){
     return this.http.post<User>("http://localhost:8080/registration",user)
   }
+
+ login(){
+   return this.http.get("http://localhost:8080/login")
+ }
 }
