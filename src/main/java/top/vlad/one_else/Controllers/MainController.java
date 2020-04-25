@@ -3,7 +3,7 @@ package top.vlad.one_else.Controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import top.vlad.one_else.Entities.User;
-import top.vlad.one_else.Entities.testUser;
+import top.vlad.one_else.helpClasses.LoginUser;
 import top.vlad.one_else.Service.UserService;
 
 import java.util.List;
@@ -30,11 +30,11 @@ public class MainController {
     }
 
     @PostMapping("/login")
-    public boolean loginUser(@RequestBody testUser testUser){
-        User userFromDb = userService.findUserByEmail(testUser.getEmail());
+    public boolean loginUser(@RequestBody LoginUser loginUser){
+        User userFromDb = userService.findUserByEmail(loginUser.getEmail());
         if(userFromDb == null)
             return false;
-        if(testUser.getPassword().equals(userFromDb.getPassword()))
+        if(loginUser.getPassword().equals(userFromDb.getPassword()))
             return true;
         else return false;
 

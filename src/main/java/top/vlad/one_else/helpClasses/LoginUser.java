@@ -1,6 +1,8 @@
-package top.vlad.one_else.Entities;
+package top.vlad.one_else.helpClasses;
 
-public class testUser {
+//класс для промежуточной проверке при логине пользователя
+
+public class LoginUser {
     private String email;
     private String password;
 
