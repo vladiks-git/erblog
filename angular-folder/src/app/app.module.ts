@@ -9,6 +9,7 @@ import {AppRoutingModule} from './app-routing.module';
 import { LoginComponent } from './pages/login/login.component';
 import {LoginAfRegComponent} from "./pages/login-af-reg/login-af-reg.component";
 import { ErrorComponent } from './pages/error/error.component';
+import {StartPageComponent} from "./pages/start-page/start-page.component";
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { ErrorComponent } from './pages/error/error.component';
     RegistrationComponent,
     LoginComponent,
     LoginAfRegComponent,
-    ErrorComponent
+    ErrorComponent,
+    StartPageComponent
   ],
   imports: [
     BrowserModule,
