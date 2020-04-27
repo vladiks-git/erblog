@@ -34,7 +34,7 @@ public class User {
     @ManyToMany(fetch = FetchType.LAZY, cascade=CascadeType.ALL)
     Set<Role> roles;
 
-    public User() {
+    public User(Set<User> user) {
     }
 
     public User(String username, String surname, String email, String password, Set<Role> roles){
