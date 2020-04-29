@@ -11,7 +11,7 @@ public class Message {
 
     private String text;
 
-    @OneToMany()
+    @OneToMany(cascade = CascadeType.DETACH)
     Set<User> user;
 
     public Message(String text, Set<User> user) {

@@ -10,11 +10,11 @@ import java.util.Collections;
 
 @Controller
 public class MessageController {
-
-    @MessageMapping("/chat")
-    @SendTo("/topic/messages")
-    public Message send(Message message) throws Exception {
-        return new Message(message.getText(), Collections.singleton(new User(message.getUser())));
-    }
+//
+//    @MessageMapping("/chat")
+//    @SendTo("/topic/messages")
+//    public Message send(Message message) throws Exception {
+//        return new Message(message.getText(), Collections.singleton(new User(message.getUser())));
+//    }
 
 }
