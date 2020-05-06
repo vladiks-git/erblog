@@ -4,12 +4,13 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from "@angular/common/http";
 
 import { AppComponent } from './app.component';
-import { RegistrationComponent } from './pages/registration/registration.component';
+import { RegistrationComponent } from './pages/first page/registration/registration.component';
 import {AppRoutingModule} from './app-routing.module';
-import { LoginComponent } from './pages/login/login.component';
-import {LoginAfRegComponent} from "./pages/login-af-reg/login-af-reg.component";
-import { ErrorComponent } from './pages/error/error.component';
-import {StartPageComponent} from "./pages/start-page/start-page.component";
+import { LoginComponent } from './pages/first page/login/login.component';
+import {LoginAfRegComponent} from "./pages/first page/login-af-reg/login-af-reg.component";
+import { ErrorComponent } from './pages/first page/error/error.component';
+import {StartPageComponent} from "./pages/first page/start-page/start-page.component";
+import { MyPageComponent } from './pages/main-page/my-page/my-page.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import {StartPageComponent} from "./pages/start-page/start-page.component";
     LoginComponent,
     LoginAfRegComponent,
     ErrorComponent,
-    StartPageComponent
+    StartPageComponent,
+    MyPageComponent
   ],
   imports: [
     BrowserModule,

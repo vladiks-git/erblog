@@ -1,14 +1,13 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {RegistrationComponent} from './pages/registration/registration.component';
-import {LoginComponent} from './pages/login/login.component';
-import {LoginAfRegComponent} from "./pages/login-af-reg/login-af-reg.component";
-import {ErrorComponent} from "./pages/error/error.component";
-import {StartPageComponent} from "./pages/start-page/start-page.component";
+import {RegistrationComponent} from './pages/first page/registration/registration.component';
+import {LoginComponent} from './pages/first page/login/login.component';
+import {LoginAfRegComponent} from "./pages/first page/login-af-reg/login-af-reg.component";
+import {ErrorComponent} from "./pages/first page/error/error.component";
+import {StartPageComponent} from "./pages/first page/start-page/start-page.component";
+import {MyPageComponent} from "./pages/main-page/my-page/my-page.component";
 
-// http://localhost:4200 -> LoginComponent
-// http://localhost:4200/registration -> RegistrationComponent
-// http://localhost:4200/login -> LoginAfRegComponent
+
 const main: Routes = [
   {path: '', component: StartPageComponent, children: [
       {path: '', component: LoginComponent, children: [
@@ -20,7 +19,8 @@ const main: Routes = [
       {path: '', component: LoginComponent, children: [
           {path: 'error', component: ErrorComponent}
         ]}
-    ]}
+    ]},
+  {path: 'page', component: MyPageComponent}
 ]
 
 @NgModule({
