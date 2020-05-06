@@ -2,7 +2,6 @@ package top.vlad.one_else.Service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import top.vlad.one_else.Entities.Role;
 import top.vlad.one_else.Entities.User;
 import top.vlad.one_else.Repository.UserRepo;
 

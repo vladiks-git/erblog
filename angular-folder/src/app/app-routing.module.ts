@@ -26,13 +26,13 @@ const main: Routes = [
     ]},
   {path: 'registration', component: RegistrationComponent},
   {path: 'login', component: LoginAfRegComponent, children: [
-      {path: '', component: LoginComponent, children: [
-          {path: 'error', component: ErrorComponent}
-        ]}
-    ]},
-  {path: 'page', component: ContentComponent, children: [
-      {path: '', component: PostPageComponent}
-    ]}
+      {path: '', component:LoginComponent, children: [
+  {path: 'error', component: ErrorComponent}
+]}
+]},
+{path: 'page', component: ContentComponent, children: [
+  {path: '', component: PostPageComponent}
+]}
 ]
 
 @NgModule({
