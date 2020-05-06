@@ -31,10 +31,10 @@ public class UserService {
         User userFromDb = userRepo.findUserByEmail(user.getEmail());
         if(userFromDb != null)
             return false;
-        user.setRoles(Collections.singleton(new Role("ROLE_USER")));
-        user.setEmail(user.getEmail());
-        user.setSurname(user.getSurname());
-        user.setPassword(user.getPassword());
+//        user.setUsername(user.getUsername());
+//        user.setEmail(user.getEmail());
+//        user.setSurname(user.getSurname());
+//        user.setPassword(user.getPassword());
         userRepo.save(user);
         return true;
     }
