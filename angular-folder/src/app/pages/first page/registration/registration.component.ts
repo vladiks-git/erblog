@@ -48,10 +48,6 @@ export class RegistrationComponent implements OnInit {
     })
   }
 
-  saveUser(){
-
-  }
-
   submit() {
     if (this.name.trim() &&
       this.surname.trim() &&

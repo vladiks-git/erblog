@@ -10,7 +10,8 @@ import { LoginComponent } from './pages/first page/login/login.component';
 import {LoginAfRegComponent} from "./pages/first page/login-af-reg/login-af-reg.component";
 import { ErrorComponent } from './pages/first page/error/error.component';
 import {StartPageComponent} from "./pages/first page/start-page/start-page.component";
-import { MyPageComponent } from './pages/main-page/my-page/my-page.component';
+import { ContentComponent } from './pages/main-page/content/content.component';
+import { PostPageComponent } from './pages/main-page/post-page/post-page.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { MyPageComponent } from './pages/main-page/my-page/my-page.component';
     LoginAfRegComponent,
     ErrorComponent,
     StartPageComponent,
-    MyPageComponent
+    ContentComponent,
+    PostPageComponent
   ],
   imports: [
     BrowserModule,

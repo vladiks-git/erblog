@@ -13,7 +13,7 @@ export class HttpService {
     return this.http.post<User>("http://localhost:8080/registration",user)
   }
 
- login(loginUser: LoginUser){
-   return this.http.post("http://localhost:8080/login",loginUser)
- }
+  login(loginUser: LoginUser){
+     return this.http.post("http://localhost:8080/login",loginUser)
+   }
 }
