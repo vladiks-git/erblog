@@ -45,7 +45,7 @@ export class LoginComponent implements OnInit {
       console.log(resp)
       if (resp == true){
         this.form.reset()
-        this.router.navigate([''])
+        this.router.navigate(['/page'])
       } else {
         this.router.navigate(['/error'])
         this.form.reset()
