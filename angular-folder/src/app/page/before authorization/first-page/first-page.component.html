@@ -1,7 +1,8 @@
-<router-outlet></router-outlet>
-
 <div class="row">
-  <div class="col-lg-9 posts">
+  <div class="col-lg-9">
+    <router-outlet></router-outlet>
+  </div>
+  <!--<div class="col-lg-9 posts">
     <div class="card-content text-center">
       <div class="card-content-header">
         Name
@@ -27,7 +28,7 @@
         <small>06/05/2020</small>
       </div>
     </div>
-  </div>
+  </div>-->
 
   <div class="col-lg-3">
     <form class="card" [formGroup]="form" (ngSubmit)="submit()">

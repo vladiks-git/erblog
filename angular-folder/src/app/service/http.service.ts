@@ -19,4 +19,8 @@ export class HttpService {
   savePost(post: Post){
     return this.http.post("http://localhost:8080/newpost", post)
   }
+
+  getAllPosts(){
+    return this.http.get<Post[]>("http://localhost:8080/posts")
+  }
 }

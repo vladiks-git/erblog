@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {Post} from "../../../interface/interfaces";
 import {HttpService} from "../../../service/http.service";
+import {Router, Routes} from "@angular/router";
 
 @Component({
   selector: 'app-feed',
@@ -12,7 +13,7 @@ export class FeedComponent implements OnInit {
 
   form: FormGroup;
 
-  constructor(private http: HttpService) { }
+  constructor(private http: HttpService, private router: Router) { }
 
   ngOnInit(){
     this.form = new FormGroup({
@@ -36,5 +37,6 @@ export class FeedComponent implements OnInit {
     this.http.savePost(post).subscribe(resp =>{
       console.log(post)
     })
+    this.router.navigate(['/feed/'])
   }
 }

@@ -1,4 +1,16 @@
 <router-outlet></router-outlet>
+<div class="alert alert-danger" role="alert"
+           *ngIf="isReg"
+>
+  <p><strong>{{email}}</strong> is already is exist.</p>
+</div>
+
+<div class="alert alert-success" role="alert"
+     *ngIf="isReg == false"
+>
+  You have successfully registered! <a [routerLink]="['/']" class="alert-link">Log in</a>.
+</div>
+
 <div class="col-lg-3">
   <form class="card" [formGroup]="form" (ngSubmit)="submit()">
     <div class="form-group">

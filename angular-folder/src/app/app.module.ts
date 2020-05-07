@@ -7,10 +7,9 @@ import {HttpClientModule} from "@angular/common/http";
 import {AppRoutingModule} from "./app-routing.module";
 import { FirstPageComponent } from './page/before authorization/first-page/first-page.component';
 import { RegistrationComponent } from './page/before authorization/registration/registration.component';
-import { SuccessfullyComponent } from './page/before authorization/Alert/successfully/successfully.component';
-import { ErrorRegComponent } from './page/before authorization/Alert/error-reg/error-reg.component';
 import { FeedComponent } from './page/blog-feed/feed/feed.component';
 import {QuillModule} from "ngx-quill";
+import { PostComponent } from './page/blog-feed/post/post.component';
 
 
 
@@ -20,9 +19,8 @@ import {QuillModule} from "ngx-quill";
     AppComponent,
     FirstPageComponent,
     RegistrationComponent,
-    SuccessfullyComponent,
-    ErrorRegComponent,
-    FeedComponent
+    FeedComponent,
+    PostComponent
   ],
   imports: [
     BrowserModule,

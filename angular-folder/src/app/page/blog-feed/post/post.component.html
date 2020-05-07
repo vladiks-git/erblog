@@ -1,0 +1,14 @@
+<div class="content" *ngFor="let post of allPosts">
+  <div class="name">
+    <small class="name-text">Author: {{post.author}}</small>
+  </div>
+  <div class="title">
+    <h2>{{post.title}}</h2>
+    <quill-view-html [content]="post.text"></quill-view-html>
+    <button type="button" class="btn btn-dark">Open</button>
+  </div>
+  <div class="date">
+    <small>07.05.2020</small>
+  </div>
+</div>
+

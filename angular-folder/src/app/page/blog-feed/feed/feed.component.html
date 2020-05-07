@@ -1,50 +1,10 @@
 <form class="card" [formGroup]="form" (ngSubmit)="submit()">
-<!--  <h1>New post</h1>
-
-  <div class="form-control"
-       [ngClass]="{invalid: form.get('title').touched && form.get('title').invalid}"
-  >
-    <label for="title">Title:</label>
-    <input id="title" type="text" FormControlName = "title">
-    <div *ngIf="form.get('title').touched && form.get('title').invalid"
-    class="validation"
-    >
-      <small *ngIf="form.get('title').errors.required">
-        /////
-      </small>
-    </div>
-  </div>
-
-  <div class="form-control">
-    <label>Content</label>
-    <quill-editor formControlName="text"></quill-editor>
-  </div>
-
-  <div class="form-control"
-       [ngClass]="{invalid: form.get('author').touched && form.get('author').invalid}"
-  >
-    <label for="author">Author:</label>
-    <input id="author" type="text" FormControlName = "author">
-    <div *ngIf="form.get('author').touched && form.get('author').invalid"
-         class="validation"
-    >
-      <small *ngIf="form.get('author').errors.required">
-        /////
-      </small>
-    </div>
-  </div>
-
-  <button type="submit" class="btn btn-success"
-  [disabled]="form.invalid"
-  >
-    Publish
-  </button>-->
 
   <div class="form-group">
     <h1>New post</h1>
 
     <label for="title" class="sr-only">Title:</label>
-    <input type="text" id="title" placeholder="Title" formControlName="title"/>
+    <input type="text" id="title" class="form-control" placeholder="Title" formControlName="title"/>
     <div *ngIf="form.get('title').touched && form.get('title').invalid"
          class="validation"
     >
@@ -57,7 +17,7 @@
     <quill-editor formControlName="text"></quill-editor>
 
     <label for="author" class="sr-only">Author:</label>
-    <input type="text" id="author" placeholder="Author" formControlName="author"/>
+    <input type="text" id="author" class="form-control" placeholder="Author" formControlName="author"/>
     <div *ngIf="form.get('author').touched && form.get('author').invalid"
          class="validation"
     >
@@ -74,3 +34,9 @@
     </button>
   </div>
 </form>
+
+
+<router-outlet></router-outlet>
+
+
+

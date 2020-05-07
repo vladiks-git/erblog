@@ -1,10 +1,7 @@
 package top.vlad.one_else.Controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import top.vlad.one_else.Entities.Post;
 import top.vlad.one_else.Service.PostService;
 
@@ -22,7 +19,7 @@ public class PostController {
     }
 
     @PostMapping("/newpost")
-    public void savePost(Post post){
+    public void savePost(@RequestBody Post post){
         postService.savePost(post);
     }
 }

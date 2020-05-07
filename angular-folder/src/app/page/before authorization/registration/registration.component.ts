@@ -16,6 +16,7 @@ export class RegistrationComponent implements OnInit {
   email: string
   password: string
   form: FormGroup
+  isReg: boolean
 
   constructor(private httpService: HttpService, private router: Router) { }
 
@@ -60,10 +61,10 @@ export class RegistrationComponent implements OnInit {
       console.log(newUser)
       this.httpService.saveUser(newUser).subscribe((response)=>{
         if (response == null){
-          this.router.navigate(['/registration/error'])
+          this.isReg = true
         }
         if (response != null){
-          this.router.navigate(['/success'])
+          this.isReg = false
         }
       })
     }
