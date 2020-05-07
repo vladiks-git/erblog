@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {User} from "../../../interfaces/interfaces";
-import {HttpService} from "../../../service/http.service";
+import {FormGroup, FormControl, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
-
-
+import {User} from "../../../interface/interfaces";
+import {HttpService} from "../../../service/http.service";
 
 @Component({
   selector: 'app-registration',
@@ -19,8 +17,7 @@ export class RegistrationComponent implements OnInit {
   password: string
   form: FormGroup
 
-  constructor(private HttpService: HttpService, private router: Router) {
-  }
+  constructor(private httpService: HttpService, private router: Router) { }
 
   ngOnInit() {
     this.form = new FormGroup({
@@ -61,8 +58,15 @@ export class RegistrationComponent implements OnInit {
         password: this.password
       }
       console.log(newUser)
-      this.HttpService.saveUser(newUser).subscribe(()=>{})
+      this.httpService.saveUser(newUser).subscribe((response)=>{
+        if (response == null){
+          this.router.navigate(['/registration/error'])
+        }
+        if (response != null){
+          this.router.navigate(['/success'])
+        }
+      })
     }
-    this.router.navigate(['/login'])
   }
+
 }

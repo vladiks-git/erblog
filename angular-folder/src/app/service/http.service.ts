@@ -1,11 +1,10 @@
-import {Injectable} from "@angular/core";
+import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {LoginUser, User} from "../interfaces/interfaces";
+import {LoginUser, Post, User} from "../interface/interfaces";
 
 @Injectable({
   providedIn: 'root'
 })
-
 export class HttpService {
   constructor(private http: HttpClient) {}
 
@@ -14,6 +13,10 @@ export class HttpService {
   }
 
   login(loginUser: LoginUser){
-     return this.http.post("http://localhost:8080/login",loginUser)
-   }
+    return this.http.post("http://localhost:8080/login",loginUser)
+  }
+
+  savePost(post: Post){
+    return this.http.post("http://localhost:8080/newpost", post)
+  }
 }

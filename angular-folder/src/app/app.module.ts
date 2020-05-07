@@ -1,37 +1,38 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {HttpClientModule} from "@angular/common/http";
 
 import { AppComponent } from './app.component';
-import { RegistrationComponent } from './pages/first page/registration/registration.component';
-import {AppRoutingModule} from './app-routing.module';
-import { LoginComponent } from './pages/first page/login/login.component';
-import {LoginAfRegComponent} from "./pages/first page/login-af-reg/login-af-reg.component";
-import { ErrorComponent } from './pages/first page/error/error.component';
-import {StartPageComponent} from "./pages/first page/start-page/start-page.component";
-import { ContentComponent } from './pages/main-page/content/content.component';
-import { PostPageComponent } from './pages/main-page/post-page/post-page.component';
+import {HttpClientModule} from "@angular/common/http";
+import {AppRoutingModule} from "./app-routing.module";
+import { FirstPageComponent } from './page/before authorization/first-page/first-page.component';
+import { RegistrationComponent } from './page/before authorization/registration/registration.component';
+import { SuccessfullyComponent } from './page/before authorization/Alert/successfully/successfully.component';
+import { ErrorRegComponent } from './page/before authorization/Alert/error-reg/error-reg.component';
+import { FeedComponent } from './page/blog-feed/feed/feed.component';
+import {QuillModule} from "ngx-quill";
+
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    FirstPageComponent,
     RegistrationComponent,
-    LoginComponent,
-    LoginAfRegComponent,
-    ErrorComponent,
-    StartPageComponent,
-    ContentComponent,
-    PostPageComponent
+    SuccessfullyComponent,
+    ErrorRegComponent,
+    FeedComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
     AppRoutingModule,
-    HttpClientModule
+    QuillModule.forRoot()
   ],
+  exports:[QuillModule],
   providers: [],
   bootstrap: [AppComponent]
 })

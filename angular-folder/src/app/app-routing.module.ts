@@ -1,38 +1,20 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {RegistrationComponent} from './pages/first page/registration/registration.component';
-import {LoginComponent} from './pages/first page/login/login.component';
-import {LoginAfRegComponent} from "./pages/first page/login-af-reg/login-af-reg.component";
-import {ErrorComponent} from "./pages/first page/error/error.component";
-import {StartPageComponent} from "./pages/first page/start-page/start-page.component";
-import {ContentComponent} from "./pages/main-page/content/content.component";
-import {PostPageComponent} from "./pages/main-page/post-page/post-page.component";
+import {FirstPageComponent} from "./page/before authorization/first-page/first-page.component";
+import {RegistrationComponent} from "./page/before authorization/registration/registration.component";
+import {SuccessfullyComponent} from "./page/before authorization/Alert/successfully/successfully.component";
+import {FeedComponent} from "./page/blog-feed/feed/feed.component";
+import {ErrorRegComponent} from "./page/before authorization/Alert/error-reg/error-reg.component";
 
 
 const main: Routes = [
- /* {path: '', component: StartPageComponent, children: [
-      {path: '', component: LoginComponent, children: [
-          {path: 'error', component: ErrorComponent}
-        ]},
-      {path: '', component: ContentComponent}
-    ]},*/
-  {path: '', component: StartPageComponent, children: [
-      {path: '', component: ContentComponent, children:[
-          {path: '', component: PostPageComponent}
-        ]},
-      {path: '', component: LoginComponent, children: [
-          {path: 'error', component: ErrorComponent}
-        ]}
+  {path: '', component: FirstPageComponent, children: [
+      {path: 'success', component: SuccessfullyComponent}
     ]},
-  {path: 'registration', component: RegistrationComponent},
-  {path: 'login', component: LoginAfRegComponent, children: [
-      {path: '', component:LoginComponent, children: [
-  {path: 'error', component: ErrorComponent}
-]}
-]},
-{path: 'page', component: ContentComponent, children: [
-  {path: '', component: PostPageComponent}
-]}
+  {path: 'registration', component: RegistrationComponent, children: [
+      {path: 'error', component: ErrorRegComponent}
+    ]},
+  {path: 'feed', component: FeedComponent}
 ]
 
 @NgModule({

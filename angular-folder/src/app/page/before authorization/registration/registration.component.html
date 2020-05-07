@@ -1,3 +1,4 @@
+<router-outlet></router-outlet>
 <div class="col-lg-3">
   <form class="card" [formGroup]="form" (ngSubmit)="submit()">
     <div class="form-group">
@@ -53,9 +54,9 @@
         </div>
       </div>
 
-    <!--  <label for="inputPassword-reg-replay" class="sr-only">Confirm password</label>
-      <input type="password" id="inputPassword-reg-replay" class="form-control"
-             placeholder="Repeat password" formControlName="confirmPassword"/>-->
+      <!--  <label for="inputPassword-reg-replay" class="sr-only">Confirm password</label>
+        <input type="password" id="inputPassword-reg-replay" class="form-control"
+               placeholder="Repeat password" formControlName="confirmPassword"/>-->
 
       <button class="btn btn-lg btn-primary btn-block" type="submit"
               [disabled]="form.invalid"
@@ -65,3 +66,4 @@
     </div>
   </form>
 </div>
+

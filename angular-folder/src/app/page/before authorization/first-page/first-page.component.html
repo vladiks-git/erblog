@@ -1,4 +1,35 @@
-<!-- <div class="login">-->
+<router-outlet></router-outlet>
+
+<div class="row">
+  <div class="col-lg-9 posts">
+    <div class="card-content text-center">
+      <div class="card-content-header">
+        Name
+      </div>
+      <div class="card-content-body">
+        <h2 class="card-content-title">Title</h2>
+        <button type="button" class="btn-p btn-dark">Open</button>
+      </div>
+      <div class="card-content-footer text-muted">
+        <small>06/05/2020</small>
+      </div>
+    </div>
+
+    <div class="card-content text-center">
+      <div class="card-content-header">
+        Name
+      </div>
+      <div class="card-content-body">
+        <h2 class="card-content-title">Title</h2>
+        <button type="button" class="btn-p btn-dark">Open</button>
+      </div>
+      <div class="card-content-footer text-muted">
+        <small>06/05/2020</small>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-3">
     <form class="card" [formGroup]="form" (ngSubmit)="submit()">
       <div class="form-group">
 
@@ -46,8 +77,15 @@
           <label class="form-check-label" for="exampleCheck1">Check me out</label>
         </div>
 
-        <button class="btn btn-lg btn-primary btn-block" type="submit"
+        <!--<button class="btn btn-lg btn-primary btn-block" type="submit"
                 [disabled]="form.invalid">
+          Sign in
+        </button>-->
+
+        <button class="btn btn-primary" type="submit"
+                [disabled]="form.invalid"
+        >
+          <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
           Sign in
         </button>
 
@@ -59,8 +97,7 @@
         </div>
       </div>
 
-      <router-outlet></router-outlet>
+
     </form>
-  <!--</div>-->
-
-
+  </div>
+</div>

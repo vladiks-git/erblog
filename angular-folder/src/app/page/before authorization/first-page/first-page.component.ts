@@ -1,22 +1,22 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {HttpService} from "../../../service/http.service";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
-import {LoginUser} from "../../../interfaces/interfaces";
+import {LoginUser} from "../../../interface/interfaces";
+import {HttpService} from "../../../service/http.service";
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  selector: 'app-first-page',
+  templateUrl: './first-page.component.html',
+  styleUrls: ['./first-page.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class FirstPageComponent implements OnInit {
 
   form: FormGroup
 
   constructor(
     private auth: HttpService,
     private router: Router
-  ) {}
+  ) { }
 
   ngOnInit(){
     this.form = new FormGroup({
@@ -45,11 +45,12 @@ export class LoginComponent implements OnInit {
       console.log(resp)
       if (resp == true){
         this.form.reset()
-        this.router.navigate(['/page'])
+        this.router.navigate(['/feed'])
       } else {
         this.router.navigate(['/error'])
         this.form.reset()
       }
     })
   }
+
 }

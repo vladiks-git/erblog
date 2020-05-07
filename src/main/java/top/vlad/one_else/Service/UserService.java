@@ -27,16 +27,15 @@ public class UserService {
         return false;
     }
 
-    public boolean saveUser(User user){
+    public User saveUser(User user){
         User userFromDb = userRepo.findUserByEmail(user.getEmail());
         if(userFromDb != null)
-            return false;
-//        user.setUsername(user.getUsername());
-//        user.setEmail(user.getEmail());
-//        user.setSurname(user.getSurname());
-//        user.setPassword(user.getPassword());
+            return null;
+        user.setEmail(user.getEmail());
+        user.setSurname(user.getSurname());
+        user.setPassword(user.getPassword());
         userRepo.save(user);
-        return true;
+        return user;
     }
 
     public void updateUser(User user){

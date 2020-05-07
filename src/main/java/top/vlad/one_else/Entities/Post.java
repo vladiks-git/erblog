@@ -12,17 +12,19 @@ public class Post {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    private String content;
+    private String text;
+    private String title;
     private String author;
-    private Date date;
+    /*private Date date;*/
 
     public Post() {
     }
 
-    public Post(String content, String author, Date date) {
-        this.content = content;
+    public Post(String title, String text, String author /*Date date*/) {
+        this.title = title;
+        this.text = text;
         this.author = author;
-        this.date = date;
+        /*this.date = date;*/
     }
 
 
@@ -34,12 +36,20 @@ public class Post {
         this.id = id;
     }
 
-    public String getContent() {
-        return content;
+    public String getText() {
+        return text;
     }
 
-    public void setContent(String content) {
-        this.content = content;
+    public void setText(String text) {
+        this.text = text;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getAuthor() {

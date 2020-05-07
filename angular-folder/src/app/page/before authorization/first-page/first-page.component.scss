@@ -1,8 +1,33 @@
+.card-content{
+  margin-bottom: 2%;
+  margin-left: 5%;
+  box-shadow: 0 5px 15px 5px #ccc;
+  width: 80%;
+}
+
+.card-content-header, .card-content-footer, .card-content-title{
+  text-align: left;
+}
+.card-content-header, .card-content-footer{
+ background: #f7f7f7;
+}
+.card-content-body{
+  background: white;
+  border-bottom: 1px  solid #d8d8d8;
+  border-top: 1px  solid #d8d8d8;
+}
+
+.btn-p{
+  margin-left: 85%;
+  border-radius: 5px;
+  width: 10%;
+}
+
 .card {
   width: 400px;
-  border-color: white;
   background-color: white;
-  margin: 10px 10px 30px;
+  margin-left: -10%;
+/*  margin: 10px 10px 30px;*/
   border-radius: 5px;
   box-shadow: 0 5px 15px 5px #ccc;
 }
@@ -40,8 +65,7 @@ input{
 }
 
 .btn{
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 38%;
   margin-bottom: 5px;
   width: 100px;
   border-radius: 30px 30px 30px 30px;
@@ -51,4 +75,3 @@ input{
 .create-account{
   text-align: center;
 }
-

@@ -21,7 +21,7 @@ public class MainController {
 //    }
 
     @PostMapping("/registration")
-    public boolean saveUser(@RequestBody User user){
+    public User saveUser(@RequestBody User user){
        return userService.saveUser(user);
     }
 
