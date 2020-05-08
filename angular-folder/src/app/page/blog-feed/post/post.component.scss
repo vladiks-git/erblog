@@ -6,9 +6,10 @@
 
 .name, .date{
   background: #f7f7f7
+
 }
 .name-text {
-  margin-left: 84%;
+  margin-left: 1%;
 }
 
 .title{
@@ -18,8 +19,15 @@
 
 .btn{
   width: 130px;
-  margin-left: 84%;
+  margin-left: 83%;
 }
 h2{
   margin-left: 1%;
+}
+.data-red{
+  margin-left: 84%;
+}
+small{
+  font-weight: bold;
+  font-size: 15px;
 }

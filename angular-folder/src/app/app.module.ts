@@ -10,6 +10,8 @@ import { RegistrationComponent } from './page/before authorization/registration/
 import { FeedComponent } from './page/blog-feed/feed/feed.component';
 import {QuillModule} from "ngx-quill";
 import { PostComponent } from './page/blog-feed/post/post.component';
+import { OnePostComponent } from './page/blog-feed/one-post/one-post.component';
+import { AdminloginComponent } from './admin-layout/adminlogin/adminlogin.component';
 
 
 
@@ -20,7 +22,9 @@ import { PostComponent } from './page/blog-feed/post/post.component';
     FirstPageComponent,
     RegistrationComponent,
     FeedComponent,
-    PostComponent
+    PostComponent,
+    OnePostComponent,
+    AdminloginComponent
   ],
   imports: [
     BrowserModule,

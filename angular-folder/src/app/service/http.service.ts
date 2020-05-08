@@ -23,4 +23,8 @@ export class HttpService {
   getAllPosts(){
     return this.http.get<Post[]>("http://localhost:8080/posts")
   }
+
+  getPostById(id: number){
+    return this.http.get<Post>(`http://localhost:8080/posts/${id}`)
+  }
 }

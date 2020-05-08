@@ -15,18 +15,25 @@ public class Post {
     private String text;
     private String title;
     private String author;
-    /*private Date date;*/
+    private Date date;
 
     public Post() {
     }
 
-    public Post(String title, String text, String author /*Date date*/) {
+    public Post(String title, String text, String author,Date date) {
         this.title = title;
         this.text = text;
         this.author = author;
-        /*this.date = date;*/
+        this.date = date;
     }
 
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
 
     public long getId() {
         return id;

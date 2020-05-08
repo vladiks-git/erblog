@@ -12,6 +12,7 @@ import {HttpService} from "../../../service/http.service";
 export class FirstPageComponent implements OnInit {
 
   form: FormGroup
+  isLogin: boolean
 
   constructor(
     private auth: HttpService,
@@ -47,7 +48,7 @@ export class FirstPageComponent implements OnInit {
         this.form.reset()
         this.router.navigate(['/feed'])
       } else {
-        this.router.navigate(['/error'])
+          this.isLogin = false
         this.form.reset()
       }
     })

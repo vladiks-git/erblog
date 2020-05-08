@@ -15,6 +15,7 @@ export class PostComponent implements OnInit {
   ngOnInit() {
     this.httpService.getAllPosts().subscribe(resp =>{
       this.allPosts = resp
+      this.allPosts.reverse()
     })
   }
 

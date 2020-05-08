@@ -18,6 +18,11 @@ public class PostController {
         return postService.getAllPosts();
     }
 
+    @GetMapping("posts/{id}")
+    public Post getPostByID(@PathVariable Long id){
+        return postService.getPostById(id);
+    }
+
     @PostMapping("/newpost")
     public void savePost(@RequestBody Post post){
         postService.savePost(post);

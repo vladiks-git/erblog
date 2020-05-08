@@ -1,6 +1,7 @@
 package top.vlad.one_else.Entities;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "t_user")
@@ -13,6 +14,17 @@ public class User {
     private String surname;
     private String password;
     private String email;
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    Set<Role> roles;
+
+    public Set<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
+    }
 
     public String getSurname() {
         return surname;
@@ -33,12 +45,12 @@ public class User {
     public User() {
     }
 
-    public User(String username, String surname, String email, String password){
+    public User(String username, String surname, String email, String password, Set<Role> roles){
         this.password = password;
         this.username = username;
         this.surname = surname;
         this.email = email;
-
+        this.roles = roles;
     }
 
     public long getId() {

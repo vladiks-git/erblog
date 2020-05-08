@@ -32,7 +32,7 @@ export class FeedComponent implements OnInit {
       title: this.form.value.title,
       text: this.form.value.text,
       author: this.form.value.author,
-      /*date: new Date()*/
+      date: new Date()
     }
     this.http.savePost(post).subscribe(resp =>{
       console.log(post)

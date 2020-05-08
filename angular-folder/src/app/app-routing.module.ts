@@ -4,6 +4,7 @@ import {FirstPageComponent} from "./page/before authorization/first-page/first-p
 import {RegistrationComponent} from "./page/before authorization/registration/registration.component";
 import {FeedComponent} from "./page/blog-feed/feed/feed.component";
 import {PostComponent} from "./page/blog-feed/post/post.component";
+import {OnePostComponent} from "./page/blog-feed/one-post/one-post.component";
 
 
 const main: Routes = [
@@ -11,9 +12,11 @@ const main: Routes = [
       {path: '', component: PostComponent}
     ]},
   {path: 'registration', component: RegistrationComponent},
-  {path: 'feed', component: FeedComponent, children: [
+  {
+    path: 'feed', component: FeedComponent, children: [
       {path: '', component: PostComponent}
-    ]}
+    ]},
+  {path: 'onepost/:id', component: OnePostComponent}
 ]
 
 @NgModule({

@@ -2,6 +2,7 @@ package top.vlad.one_else.Service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import top.vlad.one_else.Entities.Role;
 import top.vlad.one_else.Entities.User;
 import top.vlad.one_else.Repository.UserRepo;
 
@@ -31,10 +32,13 @@ public class UserService {
         User userFromDb = userRepo.findUserByEmail(user.getEmail());
         if(userFromDb != null)
             return null;
-        user.setEmail(user.getEmail());
-        user.setSurname(user.getSurname());
-        user.setPassword(user.getPassword());
-        userRepo.save(user);
+        User newUser = new User();
+        newUser.setUsername(user.getUsername());
+        newUser.setSurname(user.getSurname());
+        newUser.setEmail(user.getEmail());
+        newUser.setPassword(user.getPassword());
+        newUser.setRoles(Collections.singleton(new Role("ROLE_USER")));
+        userRepo.save(newUser);
         return user;
     }
 
