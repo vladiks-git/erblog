@@ -1,0 +1,19 @@
+<div class="content" *ngFor="let post of allPosts">
+  <div class="name">
+    <small class="name-text">Author: {{post.author}}</small>
+  </div>
+  <div class="title">
+    <h2>{{post.title}}</h2>
+    <div *ngIf="post.text.length > 114; else elseBlock" >
+      <quill-view-html [content]="post.text.substring(0,2500) + '...'"></quill-view-html>
+    </div>
+    <ng-template #elseBlock><quill-view-html  [content]="post.text"></quill-view-html></ng-template>
+
+    <button type="button" class="btn btn-dark" [routerLink]="['/onepost', post.id]">Open</button>
+    <button (click)="deletePost(post.id)">Delete</button>
+  </div>
+  <div class="date">
+
+    <small class="data-red">{{post.date | date: 'short'}}</small>
+  </div>
+</div>

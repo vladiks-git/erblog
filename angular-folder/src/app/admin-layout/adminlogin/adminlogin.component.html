@@ -1,1 +1,7 @@
-<p>adminlogin works!</p>
+<div>
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <input type="text" placeholder="email" formControlName="email">
+    <input type="password" placeholder="password" formControlName="password">
+    <button type="submit">Sing in</button>
+  </form>
+</div>

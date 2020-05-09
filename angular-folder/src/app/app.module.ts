@@ -12,6 +12,7 @@ import {QuillModule} from "ngx-quill";
 import { PostComponent } from './page/blog-feed/post/post.component';
 import { OnePostComponent } from './page/blog-feed/one-post/one-post.component';
 import { AdminloginComponent } from './admin-layout/adminlogin/adminlogin.component';
+import { AdminpostsComponent } from './admin-layout/adminposts/adminposts.component';
 
 
 
@@ -24,7 +25,8 @@ import { AdminloginComponent } from './admin-layout/adminlogin/adminlogin.compon
     FeedComponent,
     PostComponent,
     OnePostComponent,
-    AdminloginComponent
+    AdminloginComponent,
+    AdminpostsComponent
   ],
   imports: [
     BrowserModule,

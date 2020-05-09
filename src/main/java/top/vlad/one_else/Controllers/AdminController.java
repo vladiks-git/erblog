@@ -28,7 +28,7 @@ public class AdminController {
             roleAdmin = r.getRole();
         }
 
-        if (roleAdmin == "ROLE_ADMIN") {
+        if (roleAdmin.equals("ROLE_ADMIN")) {
             if (loginUser.getPassword().equals(admin.getPassword())) {
                 return true;
             }
